@@ -28,7 +28,7 @@ services:
 
   # Jenkins service - CI/CD automation server
   jenkins:
-    image: jenkins/jenkins:lts-jdk11
+    image: jenkins/jenkins:lts-jdk17
     container_name: jenkins
     restart: unless-stopped
     user: root  # Run with root perms
