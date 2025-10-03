@@ -26,9 +26,11 @@ services:
     ports:
       - "2376:2376" # Daemon port with TLS
 
-  # Jenkins service - CI/CD automation server
+  # Jenkins service - CI/CD automation server with Docker CLI
   jenkins:
-    image: jenkins/jenkins:lts-jdk17
+    build:
+      context: .
+      dockerfile: Dockerfile.jenkins
     container_name: jenkins
     restart: unless-stopped
     user: root  # Run with root perms
